@@ -1,12 +1,16 @@
 package com.gubbacchi.tools;
 
 import java.io.*;
+import java.util.Scanner;
 
 /**
  * Created by bindhukc on 2/27/17.
  */
 public class UltimateGrep {
     public static void main(String[] args) {
+
+        System.out.println("Arg 1 : " + args[0]);
+
         System.out.println("Hello world");
         System.out.println("Hi Puttanni");
         System.out.println("Hi Good morning Gubbi mari");
@@ -19,7 +23,7 @@ public class UltimateGrep {
             b = new BufferedReader(new InputStreamReader(fis));
             String line = b.readLine();
             while (line != null) {
-                System.out.println(line);
+                //System.out.println(line);
                 line = b.readLine();
             }
         }
@@ -30,17 +34,30 @@ public class UltimateGrep {
             System.out.println("IO exception");
         }
         finally {
-            //try {
-               // b.close();
-                //fis.close();
                 System.out.println("Everything is fine");
-            //}
-           // catch (IOException ex2){
-                //System.out.println("exception");
-            //}
+            }
+           System.out.println("enter the string you want to search in a file");
+           Scanner s = new Scanner(System.in);
+           String input = s.nextLine();
+           System.out.println("the input string is  "+ input);
+
+               Scanner s1 = new Scanner("/Users/bindhukc/code/UltimateGrep/src/main/java/com/gubbacchi/tools/sample.txt");
+               while(s1.hasNextLine()) {
+                   String lineFromfile = s1.nextLine();
+                   if(lineFromfile.contains(input)){
+                       System.out.println("i found string in the file "+input);
+                   }
+               }
         }
+
+
         // 1. argument parsing  "grep <-n> search_str filename"
         // 2. argument validation
         // 3. reading file line-by-line and and searching for string
     }
-}
+
+
+    // 1. remove hello world statements
+    // 2. use buffered reader instead of scanner to read file
+    // 3. print line numbers
+    // 4. Get search string from command line instead of scanner
