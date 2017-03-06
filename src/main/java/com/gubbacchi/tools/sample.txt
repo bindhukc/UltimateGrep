@@ -1,4 +1,4 @@
 Hi this is Java Programming
 Java is a pure Object oriented programming
-java has OOps concepts
+Java has OOps concepts
 Inheritance, polymorphism, Encapsulation, Abstraction
